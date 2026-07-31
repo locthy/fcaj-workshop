@@ -1,99 +1,52 @@
 ---
-title : "VPC Endpoint Policies"
-date : 2024-01-01
+title : "RDS Database Setup"
+date : 2026-07-28
 weight : 4
 chapter : false
-pre : " <b> 5.4. </b> "
+pre : " <b> 5.4 </b> "
 ---
 
-When you create an interface or gateway endpoint, you can attach an endpoint policy to it that controls access to the service to which you are connecting. A VPC endpoint policy is an IAM resource policy that you attach to an endpoint. If you do not attach a policy when you create an endpoint, AWS attaches a default policy for you that allows full access to the service through the endpoint.
+## RDS PostgreSQL Setup Guide
 
-You can create a policy that restricts access to specific S3 buckets only. This is useful if you only want certain S3 Buckets to be accessible through the endpoint.
+### 1. Open the main RDS page, choose Databases and Create database
 
-In this section you will create a VPC endpoint policy that restricts access to the S3 bucket specified in the VPC endpoint policy.
+Go to the AWS Console, open the **Amazon RDS** service, and go to the **Databases** section.
 
-![endpoint diagram](/images/5-Workshop/5.5-Policy/s3-bucket-policy.png)
+On the main RDS page, choose **Create database** to start the configuration.
 
-#### Connect to an EC2 instance and verify connectivity to S3
+![RDS Create Database](/images/5-Workshop/5.4-RDS/rds-1.png)
 
-1. Start a new AWS Session Manager session on the instance named Test-Gateway-Endpoint. From the session, verify that you can list the contents of the bucket you created in Part 1: Access S3 from VPC:
+At this step, if you want the full setup, choose the **Create database** option with **full configuration** to access the full settings page.
 
-```
-aws s3 ls s3://\<your-bucket-name\>
-```
-![test](/images/5-Workshop/5.5-Policy/test1.png)
+### 2. Select PostgreSQL engine and Easy create
 
-The bucket contents include the two 1 GB files uploaded in earlier.
+At the engine selection step, choose **PostgreSQL**.
 
-2. Create a new S3 bucket; follow the naming pattern you used in Part 1, but add a '-2' to the name. Leave other fields as default and click create
+If AWS shows the **Easy create** option, you can enable it to use a quick setup. Easy create will use default settings while still ensuring the engine is PostgreSQL.
 
-![create bucket](/images/5-Workshop/5.5-Policy/create-bucket.png)
+![Choose PostgreSQL and Easy create](/images/5-Workshop/5.4-RDS/rds-2.png)
 
-Successfully create bucket
+### 3. Enter database name and choose self-managed password + master username
 
-![Success](/images/5-Workshop/5.5-Policy/create-bucket-success.png)
+Next, enter the desired database name in the **DB instance identifier** or **Database name** field.
 
-3. Navigate to: Services > VPC > Endpoints, then select the Gateway VPC endpoint you created earlier. Click the Policy tab. Click Edit policy.
+Choose the password management method as **Self-manage password**.
 
-![policy](/images/5-Workshop/5.5-Policy/policy1.png)
+Enter:
 
-The default policy allows access to all S3 Buckets through the VPC endpoint.
+- **Master username**: the admin user name (for example: `admin`)
+- **Password** and **Confirm password**: the password you choose
 
-4. In Edit Policy console, copy & Paste the following policy, then replace yourbucketname-2 with your 2nd bucket name. This policy will allow access through the VPC endpoint to your new bucket, but not any other bucket in Amazon S3. Click Save to apply the policy.
+![Enter database name and self-manage password](/images/5-Workshop/5.4-RDS/rds-3.png)
 
-```
-{
-  "Id": "Policy1631305502445",
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1631305501021",
-      "Action": "s3:*",
-      "Effect": "Allow",
-      "Resource": [
-      				"arn:aws:s3:::yourbucketname-2",
-       				"arn:aws:s3:::yourbucketname-2/*"
-       ],
-      "Principal": "*"
-    }
-  ]
-}
-```
+### 4. Choose connect to an existing EC2 and click Create database
 
-![custom policy](/images/5-Workshop/5.5-Policy/policy2.png)
+At the connectivity setup step, select the existing **EC2 instance** in the same VPC or subnet.
 
-Successfully customize policy
+Make sure the security group and network settings allow EC2 to connect to RDS.
 
-![success](/static/images/5-Workshop/5.5-Policy/success.png)
+Finally, review the settings and click **Create database** to launch the PostgreSQL RDS instance.
 
-5. From your session on the Test-Gateway-Endpoint instance, test access to the S3 bucket you created in Part 1: Access S3 from VPC
-```
-aws s3 ls s3://<yourbucketname>
-```
+![Connect EC2 and Create database](/images/5-Workshop/5.4-RDS/rds-4.png)
 
-This command will return an error because access to this bucket is not permitted by your new VPC endpoint policy:
-
-![error](/static/images/5-Workshop/5.5-Policy/error.png)
-
-6. Return to your home directory on your EC2 instance ` cd~ `
-
-+ Create a file ```fallocate -l 1G test-bucket2.xyz ```
-+ Copy file to 2nd bucket ```aws s3 cp test-bucket2.xyz s3://<your-2nd-bucket-name>```
-
-![success](/static/images/5-Workshop/5.5-Policy/test2.png)
-
-This operation succeeds because it is permitted by the VPC endpoint policy.
-
-![success](/static/images/5-Workshop/5.5-Policy/test2-success.png)
-
-+ Then we test access to the first bucket by copy the file to 1st bucket `aws s3 cp test-bucket2.xyz s3://<your-1st-bucket-name>`
-
-![fail](/static/images/5-Workshop/5.5-Policy/test2-fail.png)
-
-This command will return an error because access to this bucket is not permitted by your new VPC endpoint policy.
-
-#### Part 3 Summary:
-
-In this section, you created a VPC endpoint policy for Amazon S3, and used the AWS CLI to test the policy. AWS CLI actions targeted to your original S3 bucket failed because you applied a policy that only allowed access to the second bucket you created. AWS CLI actions targeted for your second bucket succeeded because the policy allowed them. These policies can be useful in situations where you need to control access to resources through VPC endpoints.
-
-
+After completion, RDS will start creating the PostgreSQL instance. You can use the provided endpoint to connect from EC2.

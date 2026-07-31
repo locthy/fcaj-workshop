@@ -1,58 +1,227 @@
 ---
-title : "Test the Interface Endpoint"
-date : 2024-01-01
+title : "Deploy environment setup"
+date : 2026-07-28
 weight : 3
 chapter : false
 pre : " <b> 5.5.3 </b> "
 ---
 
-#### Get the regional DNS name of S3 interface endpoint
-1. From the Amazon VPC menu, choose Endpoints.
+## 1. Goal
 
-2. Click the name of newly created endpoint: s3-interface-endpoint. Click details and save the regional DNS name of the endpoint (the first one) to your text-editor for later use. 
+This section explains how to set up the development environment and deploy the perfume website system on AWS. After completion, the system will include:
 
-![dns name](/images/5-Workshop/5.4-S3-onprem/dns.png)
+- Backend running on Amazon EC2.
+- PostgreSQL database using Amazon RDS.
+- Frontend React deployed through Amazon S3 and Amazon CloudFront.
+- Prisma ORM managing the database.
+- Full application accessible via the Internet and communicating with the database in AWS.
 
+---
 
-#### Connect to EC2 instance in "VPC On-prem"
+## 2. Required tools
 
-1. Navigate to **Session manager** by typing "session manager" in the search box 
+Before deployment, prepare the following tools:
 
-2. Click **Start Session**, and select the EC2 instance named **Test-Interface-Endpoint**. This EC2 instance is running in "VPC On-prem" and will be used to test connectivty to Amazon S3 through the Interface endpoint we just created. Session Manager will open a new browser tab with a shell prompt: **sh-4.2 $**
+- Node.js (LTS recommended)
+- npm
+- Git
+- Prisma ORM
+- PostgreSQL
+- Docker and Docker Compose (if running local database)
+- AWS account
 
-![Start session](/images/5-Workshop/5.4-S3-onprem/start-session.png)
+---
 
-3. Change to the ssm-user's home directory with command "cd ~"
+## 3. Install Git and clone the project
 
-4. Create a file named testfile2.xyz
+On Amazon Linux EC2, install Git if it is not already installed:
+
+```bash
+yum install -y git
 ```
-fallocate -l 1G testfile2.xyz
+
+Change to the `ec2-user` home directory and clone the repository:
+
+```bash
+cd /home/ec2-user
+git clone https://github.com/Thinkj07/perfume-web.git
 ```
 
-![user](/images/5-Workshop/5.4-S3-onprem/cli1.png)
+If you want to work directly in the project folder:
 
+```bash
+cd /home/ec2-user/perfume-web
+```
 
-5. Copy file to the same S3 bucket we created in section 3.2
+---
+
+## 4. Install Node.js
+
+On Amazon Linux EC2, use **NVM (Node Version Manager)** to install Node.js.
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+source "$NVM_DIR/nvm.sh"
+
+nvm install --lts
+nvm use --lts
+```
+
+Check the versions:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+## 5. Install project dependencies
+
+Move into the backend folder:
+
+```bash
+cd backend
+```
+
+Install all packages:
+
+```bash
+npm install
+```
+
+---
+
+## 6. Configure environment variables
+
+Create the `.env` file:
+
+```bash
+cp .env.example .env
+```
+
+Example configuration:
+
+```env
+NODE_ENV=development
+PORT=3000
+
+DATABASE_URL=postgresql://postgres:password@database-1.xxxxx.ap-southeast-1.rds.amazonaws.com:5432/perfume_store?schema=public
+
+JWT_SECRET=replace-with-secret-key
+JWT_ISSUER=perfume-api
+JWT_AUDIENCE=perfume-client
+
+ACCESS_TOKEN_TTL_SECONDS=900
+REFRESH_TOKEN_TTL_SECONDS=604800
+
+BCRYPT_ROUNDS=12
+
+AWS_REGION=ap-southeast-1
+STAGE=production
+```
+
+In this file:
+
+- `DATABASE_URL` is the connection string to Amazon RDS.
+- `JWT_SECRET` is used to sign JWT tokens.
+- `PORT` is the backend listening port.
+
+---
+
+## 7. Connect to Amazon RDS PostgreSQL
+
+Check PostgreSQL connection:
+
+```bash
+nc -vz database-1.xxxxx.ap-southeast-1.rds.amazonaws.com 5432
+```
+
+If the connection succeeds, you will see:
+
+```text
+Connected to database-1.xxxxx.ap-southeast-1.rds.amazonaws.com:5432
+```
+
+---
+
+## 8. Initialize the database
+
+After configuring `.env`, run migrations:
+
+```bash
+npx prisma migrate deploy
+```
+
+If the project includes seed data:
+
+```bash
+npx prisma db seed
+```
+
+Run `db seed` only when you want to insert initial data into the system.
+
+---
+
+## 9. Run the backend
+
+Start the server:
+
+```bash
+npm run dev
+```
+
+Expected output:
+
+```text
+API listening on port 3000
+```
+
+Check it at:
 
 ```
-aws s3 cp --endpoint-url https://bucket.<Regional-DNS-Name> testfile2.xyz s3://<your-bucket-name>
-``` 
-+ This command requires the --endpoint-url parameter, because you need to use the endpoint-specific DNS name to access S3 using an Interface endpoint.
-+ Do not include the leading ' * ' when copying/pasting the regional DNS name.
-+ Provide your S3 bucket name created earlier
+http://<EC2-Public-IP>:3000
+```
 
-![copy file](/images/5-Workshop/5.4-S3-onprem/cli2.png)
+---
 
+## 10. Deployment architecture
 
-Now the file has been added to your S3 bucket. Let check your S3 bucket in the next step.
+The deployed system architecture is as follows:
 
-#### Check Object in S3 bucket
+```text
+Internet
+      │
+      ▼
+CloudFront
+      │
+      ▼
+Amazon S3 (React Build)
 
-1. Navigate to S3 console
-2. Click Buckets
-3. Click the name of your bucket and you will see testfile2.xyz has been added to your bucket
+Browser
+      │
+      ▼
+Backend API (EC2)
+      │
+      ▼
+Amazon RDS PostgreSQL
+```
 
-![check bucket](/images/5-Workshop/5.4-S3-onprem/check-bucket.png)
+CloudFront distributes static assets (HTML, CSS, JavaScript, and images), while EC2 handles application logic and communicates with PostgreSQL on Amazon RDS.
+
+---
+
+## 11. Verify the system
+
+After deployment completes, verify:
+
+- Frontend is accessible through CloudFront or EC2.
+- Backend returns data through the API.
+- Prisma connects successfully to PostgreSQL.
+- EC2 can access RDS.
+- Users can register, log in, and interact with data.
 
 
 
