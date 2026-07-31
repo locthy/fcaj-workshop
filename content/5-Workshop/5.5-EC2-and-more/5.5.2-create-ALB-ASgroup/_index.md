@@ -1,43 +1,178 @@
 ---
-title : "Create an S3 Interface endpoint"
-date : 2024-01-01
-weight : 2
-chapter : false
-pre : " <b> 5.5.2 </b> "
+title: "Create Auto Scaling Group and Application Load Balancer"
+date: 2024-01-01
+weight: 2
+chapter: false
+pre: " <b> 5.5.2 </b> "
 ---
 
-In this section you will create and test an S3 interface endpoint using the simulated on-premises environment deployed as part of this workshop.
+In this section, we will create an Auto Scaling Group and an Application Load Balancer (ALB).
+---
 
-1. Return to the Amazon VPC menu. In the navigation pane, choose Endpoints, then click Create Endpoint.
+## Create Launch Template
 
-2. In Create endpoint console:
-+ Name the interface endpoint
-+ In Service category, choose **aws services** 
+-    **EC2 -> Launch Templates -> Create launch template**
 
-![name](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint1.png)
+ - **Launch template name and description**
 
-3.  In the Search box, type S3 and press Enter. Select the endpoint named com.amazonaws.us-east-1.s3. Ensure that the Type column indicates Interface.
 
-![service](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint2.png)
+| Field                         | Value                        |
+| ------------------------------ | ------------------------------ |
+| Launch template name - require | `MonaPerfume-EC2-LT`           |
+| Template version description   | `Template for MonaPerfume EC2` |
 
-4. For VPC, select VPC Cloud from the drop-down.
-{{% notice warning %}}
-Make sure to choose "VPC Cloud" and not "VPC On-prem"
-{{% /notice %}}
-+ Expand **Additional settings** and ensure that Enable DNS name is *not* selected (we will use this in the next part of the workshop)
+![Setting launch template](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/lt1.png)
 
-![vpc](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint3.png)
+- Select the AMI you previously created.
+  ![Setting launch template](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/lt2.png)
 
-5. Select 2 subnets in the following AZs: us-east-1a and us-east-1b
+| Field                         | Value                        |
+| ------------------------------ | ------------------------------ |
+| Instance type | `t3.micro`           |
+| Key pair name   | Select the previously created key pair |
 
-![subnets](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint4.png)
+  ![Setting launch template](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/lt2.5.png)
 
-6. For Security group, choose SGforS3Endpoint:
+- **Network settings**
 
-![sg](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint5.png)
+| Field                     | Value                          |
+| -------------------------- | -------------------------------- |
+| Subnet                     | Don't include in launch template |
+| Availability Zone          | Don't include in launch template |
+| Firewall (security groups) | Select existing security group   |
+| Security groups            | MonaPerfume-EC2-SG               |
 
-7. Keep the default policy - full access and click Create endpoint
+![Setting launch template](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/lt3.png)
 
-![success](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint-success.png)
+- **Advanced details**
+  | Field | Value|
+  | ---------- | -------- |
+  | IAM instance profile | MonaPerfume-EC2-S3-SSM |
 
-Congratulation on successfully creating S3 interface endpoint. In the next step, we will test the interface endpoint.
+![Setting launch template](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/lt4.png)
+
+2. **Create launch template**
+
+## Create Target group
+
+**EC2 -> Target groups -> Create target group**
+
+1.  **Create target group**
+
+- Settings - immutable
+
+| Field                | Value          |
+| --------------------- | ---------------- |
+| **Target group name** | `MonaPerfume-TG` |
+| **Protocol**          | HTTP             |
+| **Port**              | 3000             |
+| **IP address type**   | IPv4             |
+| **VPC**               | MonaPerfume-VPC  |
+
+![Setting target group](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/tg1.png)
+
+- Health checks
+  | Field | Value |
+  | ------------------------- | ------------------------------ |
+  | Health check protocol | HTTP |
+  | Health check path | / (If a specific health check route exists in the backend, specify it here; otherwise, keep the default) |
+
+![Setting target group](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/tg2.png)
+
+- Advanced health check settings
+  | Field | Value |
+  | ------------------------- | ------------------------------ |
+  | Interval | 10 |
+
+2. Register targets - recommended
+
+- Available instances (2)
+
+Choose 2 instance created earlier with port **3000** then **Includes as pending below**
+
+ **Next** -> **Create target group**
+
+![Setting target group](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/tg3.png)
+![Setting target group](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/tg4.png)
+
+## Create Auto Scaling Group
+
+- **EC2 -> Auto Scaling Group -> Choose launch template**
+
+| Field                  | Value            |
+| ----------------------- | ------------------ |
+| Auto Scaling group name | `MonaPerfume-ASG`  |
+| Launch template         | MonaPerfume-EC2-LT |
+
+![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/asg1.png)
+
+- **Choose instance launch options**
+
+| Field                         | Value                                                                                |
+| ------------------------------ | -------------------------------------------------------------------------------------- |
+| VPC                            | `MonaPerfume-VPC`                                                                      |
+| Availability Zones and subnets | MonaPerfume-VPC-subnet-private1-us-east-1a, MonaPerfume-VPC-subnet-private2-us-east-1b |
+
+![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/asg2.png)
+
+- **Configure group size and scaling - optional**
+
+| Field               | Value |
+| -------------------- | ------- |
+| Desired capacity     | `2`     |
+| Min desired capacity | `2`     |
+| Max desired capacity | `4`     |
+
+![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/asg3.png)
+
+- **Add tags - optional**
+
+
+| Field           | Value       |
+| ---------------- | ------------- |
+| Key              | `Name`        |
+| Value - optional | `Scaling EC2` |
+
+![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/asg4.png)
+
+- **Create Auto Scaling Group**
+
+## Create Application Load Balancer
+
+
+**EC2 -> Load balancers -> Create load balancer**
+
+1. Choose Application Load Balancer
+   ![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/alb1.png)
+
+2. **Basic configuration**
+| Field           | Value       |
+| ---------------- | ------------- |
+| Load blancer name              | `MonaPerfume-ALB`        |
+
+   ![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/alb2.png)
+
+3. **Network mapping**
+| Field           | Value       |
+| ---------------- | ------------- |
+| VPC              | `MonaPerfume-VPC`        |
+| Availability Zones and subnets              | chọn tất cả public subnet        |
+
+   ![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/alb3.png)
+
+4. **Security groups**
+| Field           | Value       |
+| ---------------- | ------------- |
+| Security groups              | `MonaPerfume-ALB-SG`        |
+  
+   ![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/alb4.png)
+
+5. **Listener**
+| Field           | Value       |
+| ---------------- | ------------- |
+| Protocol              | `HTTP`        |
+| Port              | `80`        |
+| Routing action              | `Forward to target group`        |
+| Target group              | `MonaPerfume-TG`        |
+
+   ![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/alb6.png)

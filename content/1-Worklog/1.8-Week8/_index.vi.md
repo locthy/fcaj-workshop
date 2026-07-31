@@ -5,55 +5,23 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Quản lý thông tin cấu hình nhạy cảm (API Keys, DB Credentials) an toàn bằng AWS Systems Manager Parameter Store.
+* Nắm tư duy và luồng hoạt động của tích hợp/triển khai tự động (CI/CD).
+* Tự động hóa quá trình Deploy code/máy chủ khi có thay đổi trên Repository (GitHub Actions / AWS CodePipeline).
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | ----------| ------------ | --------------- | -------------- |
+| 2,3   | - Nghiên cứu cơ chế hoạt động của tường lửa ứng dụng web và thực hiện các bài lab kèm theo | 20/07/2026   | 21/07/2026  |[AWS Web Application Firewall](https://000026.awsstudygroup.com/vi/)|
+| 4, 5 | - Tìm hiểu cú pháp viết file cấu hình hạ tầng bằng định dạng YAML/JSON trong AWS CloudFormation. <br> - Viết mã nguồn mẫu để định nghĩa các tài nguyên cơ bản bao gồm VPC, Subnet và Internet Gateway.  | 22/07/2026 | 23/07/2026 | |
+| 6 | - Tìm hiểu và áp dụng dịch vụ lưu trữ thông tin bảo mật AWS Secrets Manager.  | 24/07/2026 | 24/07/2026      | [Sử dụng AWS Secrets Manager với Amazon RDS và AWS Fargate](https://000096.awsstudygroup.com/vi/)|
 
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Biết cách thiết lập các luật chặn lọc mã độc và truy cập trái phép bằng AWS WAF để bảo vệ an toàn cho các đầu cuối Web API.
+* Biết cách quản lý hạ tầng bằng mã nguồn, biết cách viết file YAML CloudFormation để khởi tạo nhanh một cụm tài nguyên mạng mà không cần làm thủ công trên giao diện web.
+* Nắm vững phương pháp bảo mật thông tin cấu hình ứng dụng bằng AWS Secrets Manager, loại bỏ hoàn toàn việc hardcode các thông tin đăng nhập trong mã nguồn.

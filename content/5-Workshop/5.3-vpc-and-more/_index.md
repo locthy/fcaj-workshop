@@ -1,18 +1,24 @@
 ---
-title : "Access S3 from VPC"
-date : 2024-01-01
-weight : 3
-chapter : false
-pre : " <b> 5.3. </b> "
+title: "SETTING UP VPC NETWORK INFRASTRUCTURE"
+date: 2026-07-26
+weight: 3
+chapter: false
+pre: " <b> 5.3. </b> "
 ---
 
-#### Using Gateway endpoint
+In this section, we will set up the VPC alongside its associated resources and features.
 
-In this section, you will create **a Gateway eendpoint** to access **Amazon S3** from **an EC2 instance**. **The Gateway endpoint** will allow upload an object to S3 buckets without using **the Public Internet**. To create an endpoint, you must specify the VPC in which you want to create the endpoint, and the service (in this case, S3) to which you want to establish the connection.
+---
 
-![overview](/images/5-Workshop/5.3-S3-vpc/diagram2.png)
+## VPC Architecture Diagram
 
-#### Content
+![Kiến trúc VPC](/images/5-Workshop/5.3-vpc/vpc_archi2.png)
 
-- [Create gateway endpoint](3.1-create-gwe/)
-- [Test gateway endpoint](3.2-test-gwe/)
+## Security Group Architecture Diagram
+
+![Security Group diagram](/images/5-Workshop/5.3-vpc/5.3.2-creat-sg/ssg4.png)
+
+#### Nội dung
+
+- [Tạo VPC và các tài nguyên/ tính năng nằm trong dịch vụ](5.3.1-create-vpc-and-more/)
+- [Tạo Security Group](5.3.2-create-sg/)

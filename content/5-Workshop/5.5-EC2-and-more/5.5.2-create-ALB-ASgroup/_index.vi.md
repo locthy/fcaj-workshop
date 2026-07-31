@@ -90,6 +90,7 @@ Trong phần này, ta sẽ tạo Auto Scaling Group và Application Balancer
 - Available instances (2)
 
 Click chọn 2 instance ta đã tạo với port **3000** và **Includes as pending below**
+
 Nhấn **Next** và **Create target group**
 
 ![Setting target group](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/tg3.png)
@@ -143,8 +144,35 @@ Nhấn **Next** và **Create target group**
 
 1. Chọn Application Load Balancer
    ![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/alb1.png)
+
+2. **Basic configuration**
+| Trường           | Giá trị       |
+| ---------------- | ------------- |
+| Load blancer name              | `MonaPerfume-ALB`        |
+
    ![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/alb2.png)
+
+3. **Network mapping**
+| Trường           | Giá trị       |
+| ---------------- | ------------- |
+| VPC              | `MonaPerfume-VPC`        |
+| Availability Zones and subnets              | chọn tất cả public subnet        |
+
    ![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/alb3.png)
+
+4. **Security groups**
+| Trường           | Giá trị       |
+| ---------------- | ------------- |
+| Security groups              | `MonaPerfume-ALB-SG`        |
+  
    ![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/alb4.png)
-   ![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/alb5.png)
+
+5. **Listener**
+| Trường           | Giá trị       |
+| ---------------- | ------------- |
+| Protocol              | `HTTP`        |
+| Port              | `80`        |
+| Routing action              | `Forward to target group`        |
+| Target group              | `MonaPerfume-TG`        |
+
    ![Setting alb](/images/5-Workshop/5.5-EC2-and-more/5.5.2-create-ALB-ASgroup/alb6.png)

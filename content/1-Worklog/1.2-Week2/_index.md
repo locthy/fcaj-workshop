@@ -5,53 +5,51 @@ weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
 
 
 ### Week 2 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand how EC2 servers operate.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   |   Briefly research and synthesize essential services applicable to the project | 08/06/2026   | 08/06/2026      | [Guidance for Web Store on AWS](https://docs.aws.amazon.com/solutions/web-store-on-aws/) |
+| 3   | - Learn Amazon EC2 theory::<br>&nbsp;&nbsp;+ Basic concepts <br>&nbsp;&nbsp;+ Security Group <br>&nbsp;&nbsp;+  Pricing<br>&nbsp;&nbsp;+ SSH connection | 09/06/2026 | 09/06/2026 | [ Elastic Compute Cloud (EC2) - Part 1 - Học Cloud từ A-Z (#1) ](https://www.youtube.com/watch?v=6PqZVGoeEEA&t=1994s)  /  [Giới thiệu EC2](https://000004.awsstudygroup.com/vi/1-introduce/) |
+| 4   | - Learn about AWS CLI <br> - Set up CLI environment:: <br>&emsp; +  Install & configure AWS CLI <br> &emsp; + Execute basic commands | 10/06/2026   | 10/06/2026      |[Làm quen với AWS CLI](https://000011.awsstudygroup.com/vi/)  |
+| 5   | - Complete the final task "Amazon Bedrock Playground - $20 credit" to earn the last $20 <br> - Launch an EC2 server with Amazon Linux 2023 AMI and connect via SSH using terminal and MobaXterm | 11/06/2026   | 11/06/2026      |[Khởi tạo Linux instance](https://000004.awsstudygroup.com/vi/4-launchlinuxinstance/) |
+| 6,7   | -Perform simple hands-on labs with EC2: <br>&nbsp;&nbsp;+ Install Nginx, configure a website, and access it <br>&nbsp;&nbsp;+ Create AMI, snapshot, and launch a new instance from it  | 12/06/2026   | 13/06/2026      |[Amazon EC2 User Guide](https://docs.aws.amazon.com/ec2/)  |
 
 
 ### Week 2 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Obtained a list of services to be learned in the following weeks for project application. 
 
-* Successfully created and configured an AWS Free Tier account.
+* Thoroughly understood the components of Amazon EC2, including:
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+  * Instance types (General Purpose, Compute Optimized, Memory Optimized)
 
-* Installed and configured AWS CLI on the computer, including:
+  * Process of creating and using AMIs
+
+  * EBS storage configuration (gp2, gp3, io1)
+
+  * Remote connection methods (SSH Key Pair, EC2 Instance Connect)
+
+* Became familiar with launching EC2 instances and configuring security groups.
+
+* Installed and configured AWS CLI on a local machine, including:
+
   * Access Key
+
   * Secret Key
+
   * Default Region
-  * ...
 
-* Used AWS CLI to perform basic operations such as:
+* Successfully completed hands-on labs:
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+  * Establishing an SSH connection from a local machine
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+  * Launching an EC2 instance from an AMI
+
+  * Hosting a simple static website

@@ -19,7 +19,7 @@ Add the following IAM permission policy to your user account to deploy and clean
                 "cloudformation:*",
                 "cloudwatch:*",
                 "ec2:AcceptTransitGatewayPeeringAttachment",
-                "ec2:AcceptTransitGatewayVpcAttachment",
+                "ec2:AcceptTransitGatewayVpcAttachment", 
                 "ec2:AllocateAddress",
                 "ec2:AssociateAddress",
                 "ec2:AssociateIamInstanceProfile",

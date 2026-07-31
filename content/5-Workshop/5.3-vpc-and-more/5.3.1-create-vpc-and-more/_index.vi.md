@@ -8,7 +8,6 @@ pre: " <b> 5.3.1 </b> "
 
 ---
 
-![Kiến trúc VPC](/images/5-Workshop/5.3-vpc/vpc_archi3.png)
 
 1.  Truy cập **VPC Console** và chọn **Create VPC**
 
@@ -28,13 +27,15 @@ Cấu hình VPC:
 | **Public subnet CIDR block in us-east-1b**  | `10.0.4.0/22`      |
 | **Private subnet CIDR block in us-east-1a** | `10.0.8.0/22`      |
 | **Private subnet CIDR block in us-east-1b** | `10.0.12.0/22`     |
+| **Private subnet CIDR block in us-east-1a** | `10.0.16.0/22`     |
+| **Private subnet CIDR block in us-east-1b** | `10.0.20.0/22`     |
 | **NAT gateways ($) - updated**              | Regional - new     |
 | **VPC endpoints**                           | S3 Gateway         |
 
-![vpc diagram](/images/5-Workshop/5.3-vpc/5.3.1-create-vpc-and-more/vpc4.png)
+![vpc diagram](/images/5-Workshop/5.3-vpc/5.3.1-create-vpc-and-more/vpc7.png)
 
-![vpc diagram](/images/5-Workshop/5.3-vpc/5.3.1-create-vpc-and-more/vpc5.png)
+![vpc diagram](/images/5-Workshop/5.3-vpc/5.3.1-create-vpc-and-more/vpc8.png)
 
-![vpc diagram](/images/5-Workshop/5.3-vpc/5.3.1-create-vpc-and-more/vpc6.png)
+![vpc diagram](/images/5-Workshop/5.3-vpc/5.3.1-create-vpc-and-more/vpc9.png)
 
 2. Chọn **Create VPC**
