@@ -1,4 +1,4 @@
-baseURL = "https://thienloc.github.io/FCAJ-Workshop/"
+baseURL = "https://thienloc.github.io/fcaj-workshop/"
 relativeURLs = false
 canonifyURLs = true
 defaultContentLanguage = "en"
