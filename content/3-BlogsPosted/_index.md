@@ -1,8 +1,10 @@
+---
 title: "Published Blogs"
 date: "2026-07-27"
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
+---
 
 # Blogs Posted
 Below are the blog posts I published on the AWS Study Group ([AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)) during my internship at Amazon Web Services Vietnam.
