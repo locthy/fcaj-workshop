@@ -1,242 +1,115 @@
 ---
-title : "Prerequiste"
-date : 2024-01-01 
-weight : 2 
+title : "Preparation Requirements"
+date : 2024-01-01
+weight : 2
 chapter : false
-pre : " <b> 5.2. </b> "
+pre : "  5.2.  "
 ---
 
-#### IAM permissions
-Add the following IAM permission policy to your user account to deploy and cleanup this workshop.
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "cloudformation:*",
-                "cloudwatch:*",
-                "ec2:AcceptTransitGatewayPeeringAttachment",
-                "ec2:AcceptTransitGatewayVpcAttachment", 
-                "ec2:AllocateAddress",
-                "ec2:AssociateAddress",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:AssociateRouteTable",
-                "ec2:AssociateSubnetCidrBlock",
-                "ec2:AssociateTransitGatewayRouteTable",
-                "ec2:AssociateVpcCidrBlock",
-                "ec2:AttachInternetGateway",
-                "ec2:AttachNetworkInterface",
-                "ec2:AttachVolume",
-                "ec2:AttachVpnGateway",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:CreateClientVpnEndpoint",
-                "ec2:CreateClientVpnRoute",
-                "ec2:CreateCustomerGateway",
-                "ec2:CreateDhcpOptions",
-                "ec2:CreateFlowLogs",
-                "ec2:CreateInternetGateway",
-                "ec2:CreateLaunchTemplate",
-                "ec2:CreateNetworkAcl",
-                "ec2:CreateNetworkInterface",
-                "ec2:CreateNetworkInterfacePermission",
-                "ec2:CreateRoute",
-                "ec2:CreateRouteTable",
-                "ec2:CreateSecurityGroup",
-                "ec2:CreateSubnet",
-                "ec2:CreateSubnetCidrReservation",
-                "ec2:CreateTags",
-                "ec2:CreateTransitGateway",
-                "ec2:CreateTransitGatewayPeeringAttachment",
-                "ec2:CreateTransitGatewayPrefixListReference",
-                "ec2:CreateTransitGatewayRoute",
-                "ec2:CreateTransitGatewayRouteTable",
-                "ec2:CreateTransitGatewayVpcAttachment",
-                "ec2:CreateVpc",
-                "ec2:CreateVpcEndpoint",
-                "ec2:CreateVpcEndpointConnectionNotification",
-                "ec2:CreateVpcEndpointServiceConfiguration",
-                "ec2:CreateVpnConnection",
-                "ec2:CreateVpnConnectionRoute",
-                "ec2:CreateVpnGateway",
-                "ec2:DeleteCustomerGateway",
-                "ec2:DeleteFlowLogs",
-                "ec2:DeleteInternetGateway",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DeleteNetworkInterfacePermission",
-                "ec2:DeleteRoute",
-                "ec2:DeleteRouteTable",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DeleteSubnet",
-                "ec2:DeleteSubnetCidrReservation",
-                "ec2:DeleteTags",
-                "ec2:DeleteTransitGateway",
-                "ec2:DeleteTransitGatewayPeeringAttachment",
-                "ec2:DeleteTransitGatewayPrefixListReference",
-                "ec2:DeleteTransitGatewayRoute",
-                "ec2:DeleteTransitGatewayRouteTable",
-                "ec2:DeleteTransitGatewayVpcAttachment",
-                "ec2:DeleteVpc",
-                "ec2:DeleteVpcEndpoints",
-                "ec2:DeleteVpcEndpointServiceConfigurations",
-                "ec2:DeleteVpnConnection",
-                "ec2:DeleteVpnConnectionRoute",
-                "ec2:Describe*",
-                "ec2:DetachInternetGateway",
-                "ec2:DisassociateAddress",
-                "ec2:DisassociateRouteTable",
-                "ec2:GetLaunchTemplateData",
-                "ec2:GetTransitGatewayAttachmentPropagations",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:ModifySecurityGroupRules",
-                "ec2:ModifyTransitGatewayVpcAttachment",
-                "ec2:ModifyVpcAttribute",
-                "ec2:ModifyVpcEndpoint",
-                "ec2:ReleaseAddress",
-                "ec2:ReplaceRoute",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:RunInstances",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-                "iam:AddRoleToInstanceProfile",
-                "iam:AttachRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:CreatePolicy",
-                "iam:CreateRole",
-                "iam:DeleteInstanceProfile",
-                "iam:DeletePolicy",
-                "iam:DeleteRole",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:GetInstanceProfile",
-                "iam:GetPolicy",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "iam:ListPolicyVersions",
-                "iam:ListRoles",
-                "iam:PassRole",
-                "iam:PutRolePolicy",
-                "iam:RemoveRoleFromInstanceProfile",
-                "lambda:CreateFunction",
-                "lambda:DeleteFunction",
-                "lambda:DeleteLayerVersion",
-                "lambda:GetFunction",
-                "lambda:GetLayerVersion",
-                "lambda:InvokeFunction",
-                "lambda:PublishLayerVersion",
-                "logs:CreateLogGroup",
-                "logs:DeleteLogGroup",
-                "logs:DescribeLogGroups",
-                "logs:PutRetentionPolicy",
-                "route53:ChangeTagsForResource",
-                "route53:CreateHealthCheck",
-                "route53:CreateHostedZone",
-                "route53:CreateTrafficPolicy",
-                "route53:DeleteHostedZone",
-                "route53:DisassociateVPCFromHostedZone",
-                "route53:GetHostedZone",
-                "route53:ListHostedZones",
-                "route53domains:ListDomains",
-                "route53domains:ListOperations",
-                "route53domains:ListTagsForDomain",
-                "route53resolver:AssociateResolverEndpointIpAddress",
-                "route53resolver:AssociateResolverRule",
-                "route53resolver:CreateResolverEndpoint",
-                "route53resolver:CreateResolverRule",
-                "route53resolver:DeleteResolverEndpoint",
-                "route53resolver:DeleteResolverRule",
-                "route53resolver:DisassociateResolverEndpointIpAddress",
-                "route53resolver:DisassociateResolverRule",
-                "route53resolver:GetResolverEndpoint",
-                "route53resolver:GetResolverRule",
-                "route53resolver:ListResolverEndpointIpAddresses",
-                "route53resolver:ListResolverEndpoints",
-                "route53resolver:ListResolverRuleAssociations",
-                "route53resolver:ListResolverRules",
-                "route53resolver:ListTagsForResource",
-                "route53resolver:UpdateResolverEndpoint",
-                "route53resolver:UpdateResolverRule",
-                "s3:AbortMultipartUpload",
-                "s3:CreateBucket",
-                "s3:DeleteBucket",
-                "s3:DeleteObject",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:GetBucketAcl",
-                "s3:GetBucketOwnershipControls",
-                "s3:GetBucketPolicy",
-                "s3:GetBucketPolicyStatus",
-                "s3:GetBucketPublicAccessBlock",
-                "s3:GetObject",
-                "s3:GetObjectVersion",
-                "s3:GetBucketVersioning",
-                "s3:ListAccessPoints",
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:ListAllMyBuckets",
-                "s3:ListBucket",
-                "s3:ListBucketMultipartUploads",
-                "s3:ListBucketVersions",
-                "s3:ListJobs",
-                "s3:ListMultipartUploadParts",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:ListStorageLensConfigurations",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:PutBucketAcl",
-                "s3:PutBucketPolicy",
-                "s3:PutBucketPublicAccessBlock",
-                "s3:PutObject",
-                "secretsmanager:CreateSecret",
-                "secretsmanager:DeleteSecret",
-                "secretsmanager:DescribeSecret",
-                "secretsmanager:GetSecretValue",
-                "secretsmanager:ListSecrets",
-                "secretsmanager:ListSecretVersionIds",
-                "secretsmanager:PutResourcePolicy",
-                "secretsmanager:TagResource",
-                "secretsmanager:UpdateSecret",
-                "sns:ListTopics",
-                "ssm:DescribeInstanceProperties",
-                "ssm:DescribeSessions",
-                "ssm:GetConnectionStatus",
-                "ssm:GetParameters",
-                "ssm:ListAssociations",
-                "ssm:ResumeSession",
-                "ssm:StartSession",
-                "ssm:TerminateSession"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
+## Overview
+Below are the **AWS prerequisites** and **local machine preparation steps** before proceeding to package and deploy the **Perfume Web** project onto the AWS cloud computing infrastructure.
+
+## AWS Prerequisites
+
+To ensure a smooth deployment process, you need to prepare your AWS account and administrative tools as follows:
+
+| Requirement | Detailed Description | Purpose of Use |
+| --- | --- | --- |
+| **AWS Account** | An AWS Root account or an IAM account with full administrative privileges (`AdministratorAccess`). | Manage and provision resources on the AWS Cloud. |
+| **AWS CLI v2** | Install the AWS Command Line Interface on your local machine and configure it using `aws configure`. | Interact with AWS services (S3, EC2, RDS, Secrets Manager, etc.) via the command line. |
+| **EC2 Key Pair** | Create an SSH Key Pair (`.pem` or `.ppk` format) in your intended deployment Region (e.g., `ap-southeast-1`). | Securely SSH into EC2 instances for configuration or troubleshooting when needed. |
+| **Service Access Permissions** | Permissions to provision VPC, EC2, RDS, ALB, S3, CloudFront, WAF, Secrets Manager, KMS, and IAM. | Avoid `AccessDenied` errors during resource provisioning. |
+
+---
+
+## Local Machine Preparation Steps
+
+Below are the source code preparation steps on your local machine before pushing the application to the cloud:
+
+### Step 1: Clone the Project Source Code
+
+Open a terminal on your local machine and clone the Perfume Web source code repository:
+
+```bash
+# Clone the repository from GitHub
+git clone https://github.com/Thinkj07/perfume-web.git
+
+# Move into the project directory
+cd perfume-web
 
 ```
 
-#### Provision resources using CloudFormation
+Basic project source code structure to verify:
 
-In this lab, we will use **N.Virginia region (us-east-1)**.
+* Frontend directory (React / Static Web)
+* Backend directory (Node.js / Express API)
+* Application configuration files (`package.json`, `.env.example`, etc.)
 
-To prepare the workshop environment, deploy this **CloudFormation Template** (click link): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Accept all of the defaults when deploying the template. 
+---
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack1.png)
+### Step 2: Separate Environment Variables & Security Information
 
-+ Tick 2 acknowledgement boxes
-+ Choose **Create stack**
+Before pushing source code to the cloud, you **must absolutely avoid hardcoding** sensitive information (Database Password, Secret Key, API Key) in your source code.
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack2.png)
+1. **Check the `.gitignore` file:** Ensure that files containing sensitive information such as `.env`, `.env.local`, and SSH key files are not committed to Git.
+2. **Prepare a sample configuration (`.env.example`):** Define the list of necessary environment variables to be fed into **AWS Secrets Manager**:
+* `DB_HOST`: The endpoint address of the Amazon RDS Primary DB.
+* `DB_PORT`: The database connection port (MySQL/PostgreSQL default: `3306` or `5432`).
+* `DB_NAME`: The database name (`perfume_db`).
+* `DB_USER` & `DB_PASSWORD`: Dynamically retrieved from AWS Secrets Manager.
+* `S3_BUCKET_NAME`: The name of the bucket storing static assets.
 
-The **ClouddFormation** deployment requires about 15 minutes to complete.
 
-![complete](/images/5-Workshop/5.2-Prerequisite/complete.png)
 
-+ **2 VPCs** have been created
+---
 
-![vpcs](/images/5-Workshop/5.2-Prerequisite/vpcs.png)
+### Step 3: Package Static Assets
 
-+ **3 EC2s** have been created
+The Perfume Web application contains static files (perfume product images, banners, CSS, JS).
 
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+1. Isolate the directory containing product images (`/public/images` or `/assets`).
+2. Compress static files or prepare the directory structure to be uploaded to an **Amazon S3 Bucket** in subsequent steps using the AWS CLI:
+```bash
+# Reference command to be used in the S3 deployment step
+aws s3 sync ./public s3://your-perfume-s3-bucket/ --acl public-read
+
+```
+
+
+
+---
+
+### Step 4: Package Backend Source Code & Initialization Script
+
+Since you will deploy the source code to EC2 instances within an Auto Scaling Group, prepare an automated installation script (**EC2 User Data Script**) on your local machine:
+
+Create a `user-data.sh` file on your local machine with the following template content:
+
+```bash
+#!/bin/bash
+# Update system and install dependencies
+sudo yum update -y
+sudo yum install -y git nodejs
+
+# Clone source code onto the EC2 instance
+cd /home/ec2-user
+git clone https://github.com/Thinkj07/perfume-web.git
+cd perfume-web
+
+# Install libraries & start the application
+npm install
+npm start
+
+```
+
+---
+
+### Step 5: Checkiness Readiness
+
+Before moving on to building the VPC infrastructure on AWS, check the following checklist:
+
+* The source code has been successfully tested and run locally.
+* No hardcoded passwords or secrets remain in the codebase.
+* AWS CLI is installed and connection testing is successful (`aws sts get-caller-identity`).
+* An EC2 Key Pair has been pre-created on the AWS Management Console.
+* The `user-data.sh` file or packaged source code is ready.

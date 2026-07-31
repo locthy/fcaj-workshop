@@ -13,7 +13,7 @@ The **Perfume Web** project is an e-commerce web application designed for online
 ---
 ## System Architecture
 
-![Architecture Overview](/images/5-Workshop/5.1-Workshop-overview/architecture.jpg)
+![Architecture Overview](/images/5-Workshop/5.1-Workshop-overview/architecture.png)
 
 ---
 

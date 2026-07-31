@@ -13,7 +13,7 @@ Dự án **Perfume Web** là ứng dụng web thương mại điện tử phục
 ---
 ## Kiến trúc hệ thống
 
-![Architecture Overview](/images/5-Workshop/5.1-Workshop-overview/architecture1.png)
+![Architecture Overview](/images/5-Workshop/5.1-Workshop-overview/architecture.png)
 
 ---
 
@@ -32,7 +32,7 @@ Hệ thống được tổ chức hoàn toàn trong một **Amazon VPC (`10.0.0.
   * **Regional NAT Gateway:** Cho phép các máy chủ EC2 nằm trong Private Subnet truy cập ra Internet một cách an toàn để cập nhật phần mềm hoặc gọi các API bên ngoài.
 
 * **Tầng dữ liệu:**
-  * **Amazon RDS :** Cơ sở dữ liệu  tại các **Private Subnets** độc lập (`10.0.16.0/22` và `10.0.20.0/22`). 
+  * **Amazon RDS (Primary & Standby DB):** Cơ sở dữ liệu quan hệ cấu hình **Multi-AZ** nằm tại các **Private Subnets** độc lập (`10.0.16.0/22` và `10.0.20.0/22`). Dữ liệu được đồng bộ liên tục sang Standby DB nhằm đảm bảo khả năng khôi phục sự cố (Failover) tự động.
 
 * **Dịch vụ dùng chung & Quản trị:**
   * **AWS IAM:** Quản lý danh tính và phân quyền truy cập theo nguyên tắc quyền tối thiểu (Least Privilege).
@@ -51,7 +51,7 @@ Luồng xử lý dữ liệu của hệ thống Perfume Web được thực hi�
 3. **Chuyển tiếp yêu cầu động:** Các truy vấn API và logic nghiệp vụ được CloudFront đẩy qua ranh giới mạng vào **VPC**.
 4. **Cân bằng tải:** Yêu cầu truy cập động được chuyển đến **Application Load Balancer (ALB)**.
 5. **Xử lý ứng dụng:** **ALB** điều phối truy cập đến các máy chủ **EC2** đang hoạt động trong **Auto Scaling Group** tại các Private Subnet.
-6. **Truy vấn cơ sở dữ liệu:** Các thao tác đọc/ghi dữ liệu đơn hàng và sản phẩm được EC2 gửi tới **Amazon RDS DB**.
+6. **Truy vấn cơ sở dữ liệu:** Các thao tác đọc/ghi dữ liệu đơn hàng và sản phẩm được EC2 gửi tới **Amazon RDS Primary DB**. Dữ liệu đồng thời được đồng bộ tự động sang **RDS Standby DB**.
 7. **Kết nối Outbound:** Khi các máy chủ EC2 cần cập nhật phần mềm hoặc liên kết API bên ngoài, lưu lượng truy cập sẽ đi qua **Regional NAT Gateway** để ra Internet.
 
 ---
@@ -78,7 +78,8 @@ Bảng dưới đây trình bày chi tiết lộ trình thực hiện từng bư
 | 3 | Triển khai RDS | ~25 phút |
 | 4 | Triển khai EC2 + App | ~45 phút |
 | 5 | Cấu hình S3 | ~20 phút |
-| 6 | Dọn dẹp | ~15 phút |
+| 6 | Tích hợp Cognito | ~30 phút |
+| 7 | Dọn dẹp | ~15 phút |
 | **Tổng** | | **~3 giờ** |
 
 ---

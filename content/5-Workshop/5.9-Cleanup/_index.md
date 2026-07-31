@@ -24,7 +24,7 @@ In this section, we will clean up all AWS resources created during the lab (**Cl
 6. A notification will appear stating that the plan must be cancelled before it can be deleted; select **Cancel plan**.
 7. Choose **Delete** again, confirm permanent deletion of the CloudFront Distribution.
 
-![Disable and Delete CloudFront Distribution](/images/5-Workshop/5.7-Cleanup/delete-cloudfront.png)
+![Disable and Delete CloudFront Distribution](/images/5-Workshop/5.9-Cleanup/delete-cloudfront.png)
 
 ---
 
@@ -38,4 +38,4 @@ In this section, we will clean up all AWS resources created during the lab (**Cl
 6. Select **`monaperfume-frontend-bucket-2026`** ➔ Click **Delete**.
 7. Type the exact bucket name **`monaperfume-frontend-bucket-2026`** in the confirmation field and click **Delete bucket**.
 
-![Empty and Delete S3 Bucket](/images/5-Workshop/5.7-Cleanup/delete-s3.png)
+![Empty and Delete S3 Bucket](/images/5-Workshop/5.9-Cleanup/delete-s3.png)

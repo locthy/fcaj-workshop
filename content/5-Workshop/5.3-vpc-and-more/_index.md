@@ -1,24 +1,24 @@
 ---
-title: "SETTING UP VPC NETWORK INFRASTRUCTURE"
+title: "VPC Network Setup"
 date: 2026-07-26
 weight: 3
 chapter: false
 pre: " <b> 5.3. </b> "
 ---
 
-In this section, we will set up the VPC alongside its associated resources and features.
+In this section, we will set up the VPC and its resources/features.
 
 ---
 
 ## VPC Architecture Diagram
 
-![Kiến trúc VPC](/images/5-Workshop/5.3-vpc/vpc_archi2.png)
+![VPC architecture](/images/5-Workshop/5.3-vpc/vpc_archi2.png)
 
 ## Security Group Architecture Diagram
 
 ![Security Group diagram](/images/5-Workshop/5.3-vpc/5.3.2-creat-sg/ssg4.png)
 
-#### Nội dung
+#### Content
 
-- [Tạo VPC và các tài nguyên/ tính năng nằm trong dịch vụ](5.3.1-create-vpc-and-more/)
-- [Tạo Security Group](5.3.2-create-sg/)
+- [Create VPC and related resources/features](5.3.1-create-vpc-and-more/)
+- [Create Security Group](5.3.2-create-SecurityGroup/)

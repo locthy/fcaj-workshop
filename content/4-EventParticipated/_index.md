@@ -6,36 +6,35 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-During my internship, I participated in four events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with wonderful moments.
+During my internship, I participated in 3 events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with great gifts and wonderful moments.
 
 ### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+&emsp;**Event Name:** Cloud Architect Game Show  
 
-&emsp;**Date & Time:** 09:00, July 04, 2026
+&emsp;**Date & Time:** 09:00, June 20, 2026  
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Location:** 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
 
 &emsp;**Role:** Attendee  
 
 ---
 
 ### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** From Campus to Cloud Workshop  
+&emsp;**Event Name:** Learning AWS Architecture
 
 &emsp;**Date & Time:** 09:00, July 11, 2026  
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Location:** 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
 
 &emsp;**Role:** Attendee  
 
 ---
 
-
-### [Event 4](4.4-Event4/)  
-&emsp;**Event Name:** AWS Hackathon Product Showcase & Workshop  
+### [Event 3](4.2-Event3/)  
+&emsp;**Event Name:** AWS Hackathon Product Showcase & Workshop
 
 &emsp;**Date & Time:** 09:00, July 25, 2026  
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Location:** 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
 
 &emsp;**Role:** Attendee  

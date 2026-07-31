@@ -1,121 +1,46 @@
 ---
 title: "Event 1"
-date: 2024-01-01
+date: 2026-06-20
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+# Báo Cáo Thu Hoạch: Cloud Architect Game Show
 
-### Mục Đích Của Sự Kiện
+### 1. Mục Đích Của Sự Kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- Tạo ra một sân chơi trí tuệ kịch tính giúp các thành viên giao lưu, học hỏi và rèn luyện tư duy thiết kế kiến trúc trên điện toán đám mây.
+- Thử thách khả năng xử lý tình huống thực tế và mức độ am hiểu về các dịch vụ thuộc hệ sinh thái AWS.
+- Nâng cao tinh thần làm việc nhóm và chiến thuật phối hợp dưới áp lực thời gian.
 
-### Danh Sách Diễn Giả
+### 2. Danh Sách Diễn Giả 
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- **Ban tổ chức & Trọng tài:** Đội ngũ từ FCAJ.
+- **Quy mô:** 8 đội thi tranh tài qua các vòng đấu loại trực tiếp đến vòng tứ kết.
 
-### Nội Dung Nổi Bật
+### 3. Nội Dung Nổi Bật
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+- **Mô hình thi đấu chiến thuật:** Các đội lần lượt vượt qua các bộ câu hỏi từ nền tảng đến chuyên sâu về AWS. Hệ thống thi đấu tích hợp các thẻ kỹ năng chiến lược như "Bảo toàn điểm" (giảm thiểu rủi ro khi chưa chắc chắn) và "Nhân đôi điểm" (kích hoạt cho câu hỏi tự tin nhất).
+- **Giải mã bài toán kiến trúc thực tế:** Các câu hỏi không chỉ dừng lại ở lý thuyết mà yêu cầu phân tích mô hình thiết kế, tối ưu chi phí, khả năng mở rộng và đảm bảo an toàn thông tin cho hệ thống đám mây.
+- **Cuộc đua tốc độ và bản lĩnh:** Áp lực thời gian đòi hỏi các đội phải nhanh chóng chắt lọc thông tin, hội ý và đưa ra phương án chính xác nhất.
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+### 4. Kiến Thức Học Được
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+- **Hệ thống hóa dịch vụ AWS:** Nhận diện được các điểm thiếu sót cá nhân trong việc kết hợp linh hoạt các dịch vụ AWS (VPC, EC2, IAM, Serverless...).
+- **Tư duy phân tích kiến trúc linh hoạt:** Rèn luyện phản xạ đọc đề bài, phát hiện bottleneck và lựa chọn giải pháp tối ưu trong thời gian ngắn.
+- **Quản trị rủi ro & Ra quyết định:** Học được cách cân nhắc giữa cơ hội nhận điểm thưởng và nguy cơ mất điểm khi sử dụng các thẻ trợ giúp chiến thuật.
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+### 5. Ứng Dụng Vào Công Việc
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+- **Bổ sung kiến thức:** Chủ động tra cứu, thực hành lại các mảng kiến thức AWS còn chưa nắm vững sau khi theo dõi các câu hỏi trong game show.
+- **Cải thiện tư duy giải quyết vấn đề:** Áp dụng phương pháp phân tích nguyên nhân gốc rễ và phản xạ nhanh khi troubleshoot sự cố trong dự án thực tế.
+- **Thúc đẩy làm việc nhóm:** Tăng cường sự trao đổi, phản biện có xây dựng với đồng nghiệp khi thiết kế kiến trúc ứng dụng.
 
-#### Domain-Driven Design (DDD)
+### 6. Trải Nghiệm Cá Nhân
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+Theo dõi **Cloud Architect Game Show** mang đến cho em một không khí học thuật vừa gay cấn vừa đầy cảm hứng. Sự kết hợp giữa tri thức kỹ thuật và yếu tố chiến thuật thi đấu làm cho các khái niệm Cloud trở nên gần gũi, sinh động hơn rất nhiều. Em cảm nhận rõ sức nóng từ sự quyết tâm của các đội thi cũng như tinh thần kết nối mạnh mẽ của cộng đồng yêu công nghệ.
 
-#### Event-Driven Architecture
+### 7. Hình ảnh tham gia sự kiên
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
-
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
-
-### Những Gì Học Được
-
-#### Tư Duy Thiết Kế
-
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
-
-#### Kiến Trúc Kỹ Thuật
-
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
-
-#### Chiến Lược Hiện Đại Hóa
-
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
-
-### Ứng Dụng Vào Công Việc
-
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
-
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+![Cloud Architecture](/images/4-Events/4.1-Event1/1.png)
