@@ -6,22 +6,22 @@ chapter: false
 pre: " <b> 1.8. </b> "
 ---
 
-### Mục tiêu tuần 8:
+### Mục tiêu tuần 8
 
-* Quản lý thông tin cấu hình nhạy cảm (API Keys, DB Credentials) an toàn bằng AWS Systems Manager Parameter Store.
-* Nắm tư duy và luồng hoạt động của tích hợp/triển khai tự động (CI/CD).
-* Tự động hóa quá trình Deploy code/máy chủ khi có thay đổi trên Repository (GitHub Actions / AWS CodePipeline).
+* Quản lý an toàn thông tin cấu hình nhạy cảm bằng AWS Systems Manager Parameter Store.
+* Hiểu rõ tư duy và quy trình CI/CD tự động.
+* Tự động hóa triển khai mã nguồn khi repository thay đổi qua GitHub Actions hoặc AWS CodePipeline.
 
-### Các công việc cần triển khai trong tuần này:
+### Kế hoạch tuần
+
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | ----------| ------------ | --------------- | -------------- |
-| 2,3   | - Nghiên cứu cơ chế hoạt động của tường lửa ứng dụng web và thực hiện các bài lab kèm theo | 20/07/2026   | 21/07/2026  |[AWS Web Application Firewall](https://000026.awsstudygroup.com/vi/)|
-| 4, 5 | - Tìm hiểu cú pháp viết file cấu hình hạ tầng bằng định dạng YAML/JSON trong AWS CloudFormation. <br> - Viết mã nguồn mẫu để định nghĩa các tài nguyên cơ bản bao gồm VPC, Subnet và Internet Gateway.  | 22/07/2026 | 23/07/2026 | |
-| 6 | - Tìm hiểu và áp dụng dịch vụ lưu trữ thông tin bảo mật AWS Secrets Manager.  | 24/07/2026 | 24/07/2026      | [Sử dụng AWS Secrets Manager với Amazon RDS và AWS Fargate](https://000096.awsstudygroup.com/vi/)|
+| 2,3 | Nghiên cứu AWS Web Application Firewall (WAF) và thực hiện bài lab. | 20/07/2026 | 21/07/2026 | [AWS Web Application Firewall](https://000026.awsstudygroup.com/vi/) |
+| 4,5 | Tìm hiểu cú pháp CloudFormation YAML/JSON cho IaC và viết template cho VPC, subnet và Internet Gateway. | 22/07/2026 | 23/07/2026 | |
+| 6 | Tìm hiểu AWS Secrets Manager và áp dụng lưu trữ bí mật an toàn. | 24/07/2026 | 24/07/2026 | [Sử dụng AWS Secrets Manager với Amazon RDS và AWS Fargate](https://000096.awsstudygroup.com/vi/) |
 
+### Kết quả tuần 8
 
-### Kết quả đạt được tuần 8:
-
-* Biết cách thiết lập các luật chặn lọc mã độc và truy cập trái phép bằng AWS WAF để bảo vệ an toàn cho các đầu cuối Web API.
-* Biết cách quản lý hạ tầng bằng mã nguồn, biết cách viết file YAML CloudFormation để khởi tạo nhanh một cụm tài nguyên mạng mà không cần làm thủ công trên giao diện web.
-* Nắm vững phương pháp bảo mật thông tin cấu hình ứng dụng bằng AWS Secrets Manager, loại bỏ hoàn toàn việc hardcode các thông tin đăng nhập trong mã nguồn.
+* Biết cách sử dụng AWS WAF để bảo vệ lưu lượng web và các endpoint API.
+* Có kinh nghiệm IaC bằng cách viết template CloudFormation cho tài nguyên mạng.
+* Áp dụng quản lý bí mật an toàn với AWS Secrets Manager, tránh hardcode thông tin trong mã nguồn.

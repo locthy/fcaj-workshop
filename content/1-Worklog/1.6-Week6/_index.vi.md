@@ -6,20 +6,21 @@ chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
-### Mục tiêu tuần 6:
+### Mục tiêu tuần 6
 
-* Vẽ các sơ đồ kiến trúc cần thiết cho project
+* Hoàn thiện sơ đồ kiến trúc và bảo mật cho project.
 
-### Các công việc cần triển khai trong tuần này:
+### Kế hoạch tuần
+
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | ----------| ------------ | --------------- | -------------- |
-| 2,3   | - Tiến hành thiết kế, vẽ kiến trúc cho project | 06/07/2026   | 06/07/2026      |
-| 4   | - Tìm hiểu về System Manager để truy cập vào EC2 trong private subnet| 08/07/2026 | 08/07/2026 | |
-| 5   | - Tìm hiểu Regional NAT Gateway | 09/07/2026 | 10/07/2026      | [Introducing Amazon VPC Regional NAT Gateway](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/introducing-amazon-vpc-regional-nat-gateway/) |
-| 6   | - Thay đổi kiến trúc và vẽ sơ đồ security group | 10/07/2026 | 10/07/2026      |  |
+| 2,3 | Thiết kế và vẽ kiến trúc project. | 06/07/2026 | 06/07/2026 | |
+| 4 | Tìm hiểu AWS Systems Manager Session Manager để truy cập EC2 trong private subnet. | 08/07/2026 | 08/07/2026 | |
+| 5 | Nghiên cứu Regional NAT Gateway. | 09/07/2026 | 10/07/2026 | [Introducing Amazon VPC Regional NAT Gateway](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/introducing-amazon-vpc-regional-nat-gateway/) |
+| 6 | Chỉnh sửa kiến trúc và vẽ sơ đồ Security Group. | 10/07/2026 | 10/07/2026 | |
 
-### Kết quả đạt được tuần 6:
+### Kết quả tuần 6
 
-* Hoàn thành sơ đồ kiến trúc và security group
-* Biết được các truy cập vào EC2 trong private subnet
-* Tìm được cách dùng 1 NAT nhưng vẫn giữ tính HA
+* Hoàn thành sơ đồ kiến trúc và sơ đồ Security Group.
+* Nắm được cách quản lý EC2 trong private subnet bằng AWS Systems Manager Session Manager.
+* Biết cách sử dụng NAT Gateway vùng để cân bằng chi phí và tính sẵn sàng cao giữa các AZ.

@@ -1,6 +1,6 @@
 ---
 title: "Internship Report"
-date: 2024-01-01
+date: 2026-07-28
 weight: 1
 chapter: false
 ---
@@ -10,15 +10,15 @@ chapter: false
 
 
 ### Student Information:
-&emsp; **Full Name:** PHAN TRAN NGUYEN PHUC
+&emsp; **Full Name:** DINH CAO THIEN LOC
 
-&emsp; **Phone Number:** 0983117463
+&emsp; **Phone Number:** 0896012119
 
-&emsp; **Email:** phuc.phanz204208z@hcmut.edu.vn
+&emsp; **Email:** loc.dinhbh@hcmut.edu.vn
 
 &emsp; **University:** Ho Chi Minh University of Technology, Vietnam National University Ho Chi Minh City
 
-&emsp; **Major:** Computer Engineering
+&emsp; **Major:** Computer Science
 
 &emsp; **Class:** AWS082025
 
@@ -28,7 +28,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 1/06/2026 to 15/08/2026
 
-![Your profile picture](/images/avatar.png)
+![Your profile picture](/images/avatar.jpg)
 
 ### Report Content
 

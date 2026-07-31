@@ -8,22 +8,20 @@ pre: " <b> 1.9. </b> "
 
 
 
-### Week 9 Objectives:
+### Week 9 Goals
 
-* Master system monitoring, log tracking, and metrics management using Amazon CloudWatch.
-* Review the complete worklog series (Weeks 1 to 9), compile project documentation, and finalize the internship final report.
+* Master system monitoring, logging, and metrics tracking using Amazon CloudWatch.
+* Review the full worklog series, complete project documentation, and finalize the internship report.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2, 3   | - Learn about Amazon CloudWatch and AWS Key Management Service (KMS) | 27/07/2026   | 28/07/2026      | |
-| 4, 5, 6 | -Complete worklogs, finalize the internship report, and consolidate essential documentation | 29/07/2026 | 31/07/2026 |
+### Weekly plan
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2,3 | Learn Amazon CloudWatch and AWS Key Management Service (KMS). | 27/07/2026 | 28/07/2026 | |
+| 4,5,6 | Complete the worklogs, finalize the internship report, and consolidate essential documentation. | 29/07/2026 | 31/07/2026 | |
 
-### Week 9 Achievements:
+### Week 9 Results
 
-* Mastered querying and inspecting system logs using CloudWatch Logs.
-
-* Applied encryption to critical data assets, including AWS Secrets Manager keys and S3 Bucket objects via AWS KMS.
-
-* Successfully finalized the complete internship portfolio, including the final summary report, technical project documentation, and the full 9-week worklog series.
+* Mastered querying and inspecting logs with CloudWatch Logs.
+* Applied encryption to key assets, including AWS Secrets Manager data and S3 objects via AWS KMS.
+* Completed the internship portfolio: final report, technical documentation, and the full 9-week worklog series.

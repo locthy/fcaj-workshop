@@ -1,7 +1,7 @@
 ---
-"title": "Event 4"
+"title": "Event 3"
 "date": "2026-07-25"
-"weight": 4
+"weight": 3
 "chapter": false
 "pre": " <b> 4.3. </b> "
 ---
@@ -74,8 +74,7 @@ Attending the hackathon product showcase workshop was an eye-opening experience,
 
 #### Event Photos
 <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
-  <img src="/images/4-event/EV4_sf.jpg" alt="Event 4" style="width: 50%; height: auto;" />
-  <img src="/images/4-event/EV4.jpg" alt="Event 4" style="width: 30%; height: auto;" />
+  <img src="/images/4-Events/4.3-Event3/workshop-3.jpg" alt="Event 3" style="width: 30%; height: auto;" />
 </div>
 
 > Overall, the event provided me with invaluable insights into product development workflows, effective AI/Cloud application strategies, and powerful inspiration to confidently take on future technology challenges."

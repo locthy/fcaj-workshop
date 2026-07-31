@@ -1,7 +1,7 @@
 ---
 "title": "Event 3"
 "date": "2026-07-25"
-"weight": 4
+"weight": 3
 "chapter": false
 "pre": " <b> 4.3. </b> "
 ---
@@ -56,7 +56,7 @@ Tham gia buổi lắng nghe workshop trình bày sản phẩm hackathon là mộ
 
 #### Một số hình ảnh khi tham gia sự kiện
 <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
-  <img src="/images/4-Events/4.3-Event3/ev.jpg" alt="Event 3" style="width: 30%; height: auto;" />
+  <img src="/images/4-Events/4.3-Event3/workshop-3.jpg" alt="Event 3" style="width: 30%; height: auto;" />
 </div>
 
 > Tổng thể, sự kiện đã cung cấp cho em vô số kinh nghiệm quý báu về quy trình phát triển sản phẩm, cách ứng dụng AI/Cloud hiệu quả và truyền cảm hứng mạnh mẽ để tự tin tham gia các thử thách công nghệ trong tương lai.

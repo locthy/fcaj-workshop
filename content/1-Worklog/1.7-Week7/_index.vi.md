@@ -6,21 +6,20 @@ chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
-### Mục tiêu tuần 7:
+### Mục tiêu tuần 7
 
-* Kiểm chứng được độ khả thi của thiết kế
-* Deploy project lên được AWS
+* Kiểm chứng thiết kế kiến trúc.
+* Triển khai ứng dụng web lên AWS.
 
-### Các công việc cần triển khai trong tuần này:
+### Kế hoạch tuần
+
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | ----------| ------------ | --------------- | -------------- |
-| 2   | - Code 1 ứng dụng test api đơn giản để test các luồng đi đã thiết kế trên AWS | 13/07/2026   | 13/07/2026      |
-| 3,4   | - Tiến hành bài test | 14/07/2026 | 15/07/2026 | |
-| 5,6 | - Tiến hành deploy ứng dụng web của project lên AWS | 16/07/2026 | 17/07/2026 |  |
+| 2 | Xây dựng ứng dụng API đơn giản để kiểm tra luồng dữ liệu đã thiết kế trên AWS. | 13/07/2026 | 13/07/2026 | |
+| 3,4 | Thực hiện kiểm thử thiết kế kiến trúc. | 14/07/2026 | 15/07/2026 | |
+| 5,6 | Triển khai ứng dụng web của project lên AWS. | 16/07/2026 | 17/07/2026 | |
 
+### Kết quả tuần 7
 
-
-### Kết quả đạt được tuần 7:
-
-* Tối ưu lại kiến trúc đã vẽ
-* Deploy thành công
+* Tối ưu kiến trúc dựa trên kết quả kiểm thử.
+* Triển khai thành công ứng dụng web lên AWS.

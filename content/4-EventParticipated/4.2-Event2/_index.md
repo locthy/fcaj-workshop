@@ -1,126 +1,48 @@
 ---
 title: "Event 2"
-date: 2024-01-01
-weight: 1
+date: 2026-07-28
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
-
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# Summary Report: “Learning AWS Architecture”
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Identify the winning team in the Cloud Architect final round
+- Introduce cloud architecture patterns and practical design considerations
 
-### Speakers
+### Event Day
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+That day was the final round of an AWS architecture competition. The atmosphere was both formal and exciting, with contestants, judges, and audience members focused on every presentation and answer. The event was structured in multiple stages, beginning with basic questions and progressing to more complex challenges, in order to evaluate participants’ architectural thinking and practical knowledge.
 
-### Key Highlights
+### Question Rounds
 
-#### Identifying the drawbacks of legacy application architecture
+- Easy: Initial questions tested foundational AWS knowledge, such as what a VPC is, the differences between public and private subnets, and the role of an Internet Gateway. These questions ensured that all participants shared a common technical baseline.
+- Medium: The next round looked deeper at service selection and design decisions, including whether to use EC2 or Lambda for different workloads, how to configure Auto Scaling for variable traffic, and comparing the trade-offs between S3, EBS, and instance store.
+- Hard: The challenge round presented real-world architecture problems, such as designing a distributed multi-AZ system for high availability, creating secure IAM configurations based on least privilege, and optimizing costs with Regional NAT Gateway within the AWS Well-Architected Framework.
+- Advanced: The final stage required more complex architectural reasoning, including designing event-driven microservices, integrating AI to improve system behavior, and creating recovery plans for when an Availability Zone fails.
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+### Final Round Experience
 
-#### Transitioning to modern application architecture – Microservices
+The final round was not only about answering correctly, but also about explaining solutions clearly, logically, and persuasively. High-scoring answers were technically accurate and included a strong rationale for why the proposed approach was appropriate for the scenario. Listening to other teams helped me see alternative architectural approaches and reinforced the idea that the best design is often the simplest one that satisfies all requirements.
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+The competition also tested communication under pressure. Contestants needed to analyze requirements quickly, propose a viable architecture, and explain the trade-offs to the judges. The judges paid particular attention to security, scalability, cost, and operational simplicity when evaluating each response.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+### Lessons Learned from the Final Round
 
-#### Domain-Driven Design (DDD)
+- Strong fundamentals are essential. Mastering VPC, subnet design, and IAM makes it possible to tackle more complex architecture problems.
+- Good architecture balances complexity and effectiveness. Avoid unnecessary complexity when a simpler solution is easier to operate and maintain.
+- Event-driven architecture and serverless are powerful patterns, but they must be applied in the right business context.
+- Designing for failure is critical. Building recovery plans for AZ-level disruptions is a sign of a well-architected system.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+### Results and Photos
 
-#### Event-Driven Architecture
+![Winning team receiving the award](/images/4-Events/4.2-Event2/workshop-2.1.jpg)
+*The winning team receives the trophy and certificate during the final round.*
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+![Speakers presenting cloud architecture](/images/4-Events/4.2-Event2/workshop-2.2.jpg)
+*The speakers presenting AWS cloud architecture models, complete with diagrams and expert explanations.*
 
-#### Compute Evolution
-
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
-
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
-
-### Key Takeaways
-
-#### Design Mindset
-
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
-
-#### Technical Architecture
-
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
-
-#### Modernization Strategy
-
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
-
-### Applying to Work
-
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
-
-### Event Experience
-
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
-
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
-
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
-
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+This final round helped me strengthen my AWS architecture knowledge, practice problem solving across increasing difficulty levels, and improve my ability to present architecture decisions in a clear, convincing way. It also highlighted the difference between theoretical understanding and real-world application under time pressure.

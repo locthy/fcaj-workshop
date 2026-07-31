@@ -1,21 +1,21 @@
 ---
 title: "Báo cáo thực tập"
-date: 2024-01-01
+date: 2026-07-28
 weight: 1
 chapter: false
 ---
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Phan Trần Nguyên Phúc
+&emsp; **Họ và tên:** Đinh Cao Thiên Lộc
 
-&emsp; **Số điện thoại:** 0983117463
+&emsp; **Số điện thoại:** 0896012119
 
-&emsp; **Email:** phuc.phanz204208z@hcmut.edu.vn
+&emsp; **Email:** loc.dinhbh@hcmut.edu.vn
 
 &emsp; **Trường:** Trường Đại học Bách khoa - Đại học Quốc gia TP.HCM
 
-&emsp; **Ngành:** Kỹ thuật máy tính
+&emsp; **Ngành:** Khoa học máy tính
 
 &emsp; **Lớp:** AWS082025
 
@@ -25,7 +25,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 1/06/2026 đến 15/08/2026
 
-![Ảnh đại diện của bạn](/images/avatar.png)
+![Ảnh đại diện của bạn](/images/avatar.jpg)
 
 
 
