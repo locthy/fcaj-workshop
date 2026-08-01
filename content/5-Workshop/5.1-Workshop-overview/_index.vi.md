@@ -10,12 +10,12 @@ pre : " <b> 5.1. </b> "
 
 Dự án **Perfume Web** là ứng dụng web thương mại điện tử phục vụ kinh doanh nước hoa trực tuyến. Workshop này hướng dẫn xây dựng và triển khai hạ tầng đám mây cho hệ thống Perfume Web trên nền tảng **Amazon Web Services (AWS)**, đáp ứng tiêu chuẩn **tính sẵn sàng cao**, **khả năng tự động mở rộng** và **bảo mật nhiều lớp**.
 
----
+
 ## Kiến trúc hệ thống
 
 ![Architecture Overview](/images/5-Workshop/5.1-Workshop-overview/architecture.png)
 
----
+
 
 ## Thành phần chính trong hệ thống
 
