@@ -21,4 +21,4 @@ Trong phần này ta sẽ thiết lập VPC và các tài nguyên/ tính năng c
 #### Nội dung
 
 - [Tạo VPC và các tài nguyên/ tính năng nằm trong dịch vụ](5.3.1-create-vpc-and-more/)
-- [Tạo Security Group](5.3.2-create-sg/)
+- [Tạo Security Group](5.3.2-create-SecurityGroup/)
